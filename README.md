@@ -11,13 +11,14 @@ rm -rf asd-template/.git
 
 Then, rename the folder to `box-walker`
 
+# Game Description
+
+In this project we will be building a simple program that allows us to control the movement of a box with the arrow keys.
+
 # Learning Objectives
 - Become familiar with the template repository
-- Practice modeling data with Objects
 - Learn a method for handling key events
 - Write code that will be useful for pong
-
-# Game description
 
 # TODOs
 

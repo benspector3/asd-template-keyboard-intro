@@ -124,7 +124,7 @@ This is actually a problem we've already solved in **Bouncing Box**. To move the
 
 ```js
 var positionX = 0; // the x-coordinate location for the box
-var velocityX = 0; // the speed * direction for the box along the x-axis
+var speedX = 0; // the speed for the box along the x-axis
 ```
 
 For this project, we want to be able to move along the x-axis _AND_ the y-axis.
@@ -132,8 +132,8 @@ For this project, we want to be able to move along the x-axis _AND_ the y-axis.
 Declare 4 variables for the `gameItem` such that we can monitor and control the following information:
 - the x-coordinate location
 - the y-coordinate location
-- the velocity (speed * direction) along the x-axis
-- the velocity (speed * direction) along the y-axis
+- the speed along the x-axis
+- the speed along the y-axis
 
 **Initialize each variable to hold the value `0`**
 
@@ -143,7 +143,7 @@ Now that we have our data tracking in place, we need to use that data to actuall
 
 ```js
 function moveBox() {
-  positionX += velocityX;
+  positionX += speedX;
   $box.css("left", positionX);
 }
 ```
@@ -158,17 +158,17 @@ Save your code and refresh the game. If you try pressing keys you'll notice that
 
 **Question: why doesn't the box move yet? Try using the debugger to figure out why.**
 
-## TODO 5: update `velocityX` and `velocityY` with the keyboard
+## TODO 5: update `speedX` and `speedY` with the keyboard
 
-The box isn't moving yet because we initialized `velocityX` and `velocityY` to `0` and, so far, have no way of changing those values.
+The box isn't moving yet because we initialized `speedX` and `speedY` to `0` and, so far, have no way of changing those values.
 
-As long as `velocityX` is `0`, the `gameItem` will not move along the x-axis. Same goes for `velocityY` and the y-axis.
+As long as `speedX` is `0`, the `gameItem` will not move along the x-axis. Same goes for `speedY` and the y-axis.
 
-Whenever we press a key, we want the `gameItem` to move in that direction. So, modify your `handleKeyDown` function such that when the `KEY.LEFT` key is pressed, the `velocityX` is set to `-5`:
+Whenever we press a key, we want the `gameItem` to move in that direction. So, modify your `handleKeyDown` function such that when the `KEY.LEFT` key is pressed, the `speedX` is set to `-5`:
 
 ```js
 if (keycode === KEY.LEFT) {
-  velocityX = -5;
+  speedX = -5;
 }
 ```
 
@@ -176,13 +176,13 @@ Do the same for the other 3 arrow keys.
 
 **Question: Why does the box only move diagonally after your press the keys?**
 
-## TODO 6: reset `velocityX` and `velocityY` on `"keyup"`
+## TODO 6: reset `speedX` and `speedY` on `"keyup"`
 
 We now have motion! However, the `gameItem` doesn't stop moving once we set it off. We need some way to stop it from moving. 
 
 Ideally, the `gameItem` would stop moving once we release the arrow key. This `"keyup"` event can be listened for in the same way that the `"keydown"` event can be listened for.
 
-**Using the code that you've already written, set up your program to listen for `"keyup"` events and set the `velocityX` and `velocityY` variables to `0` whenever the arrow keys are released**
+**Using the code that you've already written, set up your program to listen for `"keyup"` events and set the `speedX` and `speedY` variables to `0` whenever the arrow keys are released**
 
 # Challenge Ideas:
 

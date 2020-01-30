@@ -1,5 +1,19 @@
 # Box Walker
 
+**Table of Contents**
+- [Setup](#setup)
+- [Game Description](#game-description)
+- [Learning Objectives](#learning-objectives)
+- [TODOs](#todos)
+  - [TODO 0: Understand the Template (no coding)](#todo-0-understand-the-template-no-coding)
+  - [TODO 1: Register Keyboard Inputs](#todo-1-register-keyboard-inputs)
+  - [TODO 2: Identify Specific Keycodes](#todo-2-identify-specific-keycodes)
+  - [TODO 3: Declare `gameItem` Variables](#todo-3-declare-gameitem-variables)
+  - [TODO 4: Declare `moveGameItem` Function](#todo-4-declare-movegameitem-function)
+  - [TODO 5: Update `speedX` and `speedY` with the Keyboard](#todo-5-update-speedX-and-speedY-with-the-keyboard)
+  - [TODO 6: Reset `speedX` and `speedY` on `"keyup"`](#todo-6-reset-speedx-and-speedy-on-keyup)
+  - [Challenge Ideas](#challenge-ideas)
+
 # Setup
 
 To install this project, first clone the [template](https://github.com/benspector3/asd-template/) repository by entering these commands into your bash terminal:
@@ -22,7 +36,7 @@ In this project we will be building a simple program that allows us to control t
 
 # TODOs
 
-## TODO 0: Run the template program and understand the basic structure (no coding)
+## TODO 0: Understand the Template (no coding)
 
 Before we begin coding, open the `index.html` file and press **Preview** to see what we're starting with. It looks like the beginning of bouncing box, right?
 
@@ -74,7 +88,7 @@ Look at the code written under each header. Remember:
 - Helper Functions: functions that implement the core logic.
 - Event Handlers: functions that directly respond to events. Depending on the program, these can serve as the "Core Logic"
 
-## TODO 1: register keyboard inputs
+## TODO 1: Register Keyboard Inputs
 
 Open the `index.js` file and find the EVENT HANDLERS section. 
 
@@ -106,7 +120,7 @@ $(document).on("keydown", handleKeyDown);
 
 <img src='img/keycode-console.png'>
 
-## TODO 2: identify specific keycodes
+## TODO 2: Identify Specific Keycodes
 
 Now that we know our `"keydown"` events are being handled, let's figure out exactly _which_ keys are being pressed. Do the following:
 
@@ -116,7 +130,7 @@ Now that we know our `"keydown"` events are being handled, let's figure out exac
 
 3. Save your code and refresh your application in the other window. Test it to make sure that the right messages are being printed to the console.
 
-## TODO 3: declare `gameItem` variables
+## TODO 3: Declare `gameItem` Variables
 
 Now that we can determine which keys are being pressed, we can move on to the problem of moving the `gameItem`. 
 
@@ -137,7 +151,7 @@ Declare 4 variables for the `gameItem` such that we can monitor and control the 
 
 **Initialize each variable to hold the value `0`**
 
-## TODO 4: declare `moveGameItem` function
+## TODO 4: Declare `moveGameItem` Function
 
 Now that we have our data tracking in place, we need to use that data to actually move the `gameItem` on each `update`. Again, this is a problem solved in Bouncing Box:
 
@@ -158,7 +172,7 @@ Save your code and refresh the game. If you try pressing keys you'll notice that
 
 **Question: why doesn't the box move yet? Try using the debugger to figure out why.**
 
-## TODO 5: update `speedX` and `speedY` with the keyboard
+## TODO 5: Update `speedX` and `speedY` with the Keyboard
 
 The box isn't moving yet because we initialized `speedX` and `speedY` to `0` and, so far, have no way of changing those values.
 
@@ -176,7 +190,7 @@ Do the same for the other 3 arrow keys.
 
 **Question: Why does the box only move diagonally after your press the keys?**
 
-## TODO 6: reset `speedX` and `speedY` on `"keyup"`
+## TODO 6: Reset `speedX` and `speedY` on `"keyup"`
 
 We now have motion! However, the `gameItem` doesn't stop moving once we set it off. We need some way to stop it from moving. 
 

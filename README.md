@@ -7,7 +7,7 @@
 - [TODOs](#todos)
   - [TODO 0: Understand the Template (no coding)](#todo-0-understand-the-template-no-coding)
   - [TODO 1: Register Keyboard Inputs](#todo-1-register-keyboard-inputs)
-  - [TODO 2: Identify Specific Keycodes](#todo-2-identify-specific-keycodes)
+  - [TODO 2: React to Specific Keycodes](#todo-2-react-to-specific-keycodes)
   - [TODO 3: Declare `gameItem` Variables](#todo-3-declare-gameitem-variables)
   - [TODO 4: Declare `moveGameItem` Function](#todo-4-declare-movegameitem-function)
   - [TODO 5: Update `speedX` and `speedY` with the Keyboard](#todo-5-update-speedX-and-speedY-with-the-keyboard)
@@ -120,7 +120,7 @@ $(document).on("keydown", handleKeyDown);
 
 <img src='img/keycode-console.png'>
 
-## TODO 2: Identify Specific Keycodes
+## TODO 2: React to Specific Keycodes
 
 Now that we know our `"keydown"` events are being handled, let's figure out exactly _which_ keys are being pressed. Do the following:
 

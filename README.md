@@ -124,7 +124,15 @@ $(document).on("keydown", handleKeyDown);
 
 Now that we know our `"keydown"` events are being handled, let's figure out exactly _which_ keys are being pressed. Do the following:
 
-1. Declare a new _constnat variable_ `KEY` in the INITALIZATION section and assign an Object to it. The object should map the keycodes for the following keys: `"LEFT"`, `"UP"`, `"RIGHT"`, `"DOWN"`.
+1. Declare a new _constant variable_ `KEY` in the INITALIZATION section and assign an Object to it. The object should map the keycodes for the following keys: `"LEFT"`, `"UP"`, `"RIGHT"`, `"DOWN"`.
+
+Example: 
+
+```js
+var KEY = {
+  "ENTER": 13,
+}
+```
 
 2. Modify your `handleKeyDown` function such that it can print out `"left pressed"` when the left arrow is pressed. Do the same for the other arrow keys.
 

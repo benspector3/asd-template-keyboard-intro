@@ -204,7 +204,7 @@ We now have motion! However, the `gameItem` doesn't stop moving once we set it o
 
 Ideally, the `gameItem` would stop moving once we release the arrow key. This `"keyup"` event can be listened for in the same way that the `"keydown"` event can be listened for.
 
-**Using the code that you've already written, set up your program to listen for `"keyup"` events and set the `speedX` and `speedY` variables to `0` whenever the arrow keys are released**
+**Similar to the code that you've already written, set up your program to listen for `"keyup"` events and set the `speedX` and `speedY` variables to `0` whenever the arrow keys are released**
 
 # Challenge Ideas:
 

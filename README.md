@@ -165,8 +165,8 @@ Now that we have our data tracking in place, we need to use that data to actuall
 
 ```js
 function moveBox() {
-  positionX += speedX;
-  $box.css("left", positionX);
+  positionX = positionX + speedX; // update the position of the box along the x-axis
+  $box.css("left", positionX);    // draw the box in the new location, positionX pixels away from the "left"
 }
 ```
 
@@ -174,7 +174,7 @@ function moveBox() {
 2. Reference the above code to write the code for `moveGameItem` to make the `gameItem` move along the x-axis AND the y-axis. 
 2. Call the function on each `update`.
 
-**HINT:** Use the `"top"` CSS property to adjust the y-coordinate location of the box.
+**HINT:** Use the `"top"` CSS property to draw the box `y` pixels from the `"top"`
 
 Save your code and refresh the game. If you try pressing keys you'll notice that the box isn't moving. 
 

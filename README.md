@@ -95,7 +95,9 @@ Open the `index.js` file and find the EVENT HANDLERS section.
 Our first task is to make our game register `"keydown"` events and respond to them. We'll keep the response simple for now until we know that our code is working.
 
 Now, do the following:
-1. Find the event handler function `handleEvent` and change its name to `handleKeyDown`. Then, add a `console.log()` statement to its `{code block}` that prints the keycode of the key pressed:
+1. Find the event handler function `handleEvent` and change its name to `handleKeyDown`. Then, declare a variable called `keycode` to store the keycode for the key that was pressed that triggered the `handleKeyDown` event handler. Finally, add a `console.log()` statement to its `{code block}` that prints the keycode of the key pressed:
+
+**HINT:** How do you know _which_ key was pressed from the given `event` object?
 
 ```js
 function handleKeyDown(event) {
@@ -103,8 +105,6 @@ function handleKeyDown(event) {
   console.log("key pressed: " + keycode);
 }
 ```
-
-**HINT:** How do you know _which_ key was pressed when given the `event` object?
 
 2. Modify the `turnOnEvents` function such that your new event handler listens for the `"keydown"` event:
 
@@ -124,7 +124,7 @@ $(document).on("keydown", handleKeyDown);
 
 Now that we know our `"keydown"` events are being handled, let's figure out exactly _which_ keys are being pressed. Do the following:
 
-1. Declare a new _constant variable_ `KEY` in the INITALIZATION section and assign an Object to it. The object should map the keycodes for the following keys: `"LEFT"`, `"UP"`, `"RIGHT"`, `"DOWN"`.
+1. Declare a new _constant variable_ `KEY` in the INITALIZATION section and assign an Object to it. The object should map the following keys: `"LEFT"`, `"UP"`, `"RIGHT"`, `"DOWN"`, to their respective keycodes. For example, the keycode for the _Enter_ key is `13`:
 
 Example: 
 
@@ -134,7 +134,19 @@ var KEY = {
 }
 ```
 
-2. Modify your `handleKeyDown` function such that it can print out `"left pressed"` when the left arrow is pressed. Do the same for the other arrow keys.
+2. Now, modify your `handleKeyDown` function such that it can react differently to our target keys. For example, if I wanted to print out `"enter pressed"` when the _Enter_ key is pressed, I could write:
+
+```js
+function handleKeyDown() {
+  var keycode = event.which;
+  
+  if (keycode === KEY.ENTER) {
+    console.log("enter pressed");
+  }
+}
+```
+
+Modify this function such that it can print out `"left pressed"` when the left arrow is pressed. Do the same for the other  three arrow keys.
 
 3. Save your code and refresh your application in the other window. Test it to make sure that the right messages are being printed to the console.
 

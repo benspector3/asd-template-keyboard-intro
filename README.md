@@ -226,3 +226,7 @@ Ideally, the `gameItem` would stop moving once we release the arrow key. This `"
 
 ## Make the box change to a random color whenever the enter button is pressed
 
+## Add a second player that can be controlled with WASD
+
+## Detect when the two players collide to make a "tag" game
+

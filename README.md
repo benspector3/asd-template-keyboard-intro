@@ -9,7 +9,7 @@
   - [TODO 1: Register Keyboard Inputs](#todo-1-register-keyboard-inputs)
   - [TODO 2: React to Specific Keycodes](#todo-2-react-to-specific-keycodes)
   - [TODO 3: Declare `gameItem` Variables](#todo-3-declare-gameitem-variables)
-  - [TODO 4: Declare `moveGameItem` Function](#todo-4-declare-movegameitem-function)
+  - [TODO 4: Declare Some Helper Function](#todo-4-declare-some-helper-functions)
   - [TODO 5: Update `speedX` and `speedY` with the Keyboard](#todo-5-update-speedX-and-speedY-with-the-keyboard)
   - [TODO 6: Reset `speedX` and `speedY` on `"keyup"`](#todo-6-reset-speedx-and-speedy-on-keyup)
   - [Challenge Ideas](#challenge-ideas)
@@ -85,38 +85,31 @@ _Note: There are also `right` and `bottom` properties but we'll stick with `top`
 Look at the code written under each header. Remember:
 - Initialization: variable declarations, any one-off statements needed to start the program
 - Core Logic: The main logic driving the program. Should delegate work to helper functions.
-- Helper Functions: functions that implement the core logic.
-- Event Handlers: functions that directly respond to events. Depending on the program, these can serve as the "Core Logic"
+- Helper Functions: functions that help implement the core logic.
 
 ## TODO 1: Register Keyboard Inputs
 
-Open the `index.js` file and find the EVENT HANDLERS section. 
+Open the `index.js` file. 
 
 Our first task is to make our game register `"keydown"` events and respond to them. We'll keep the response simple for now until we know that our code is working.
 
 Now, do the following:
-1. Find the event handler function `handleEvent` and change its name to `handleKeyDown`. Then, declare a variable called `keycode` to store the keycode for the key that was pressed that triggered the `handleKeyDown` event handler. Finally, add a `console.log()` statement to its `{code block}` that prints the keycode of the key pressed:
+1. Find the event handler function `handleEvent` and change its name to `handleKeyDown`. Inside, add a `console.log()` statement to its `{code block}` that prints the keycode of the key pressed:
+2. At the top of the Core Logic, you will find where the event handler's are registered (you're looking for `$(document).on(...)`. Modify this code such that the event handler you just created is called in response to `"keydown"` events (you could also use `"keypress"`).
 
 **HINT:** How do you know _which_ key was pressed from the given `event` object?
 
 ```js
 function handleKeyDown(event) {
-  var keycode = ???;
-  console.log("key pressed: " + keycode);
+  console.log(???);
 }
 ```
 
-2. Modify the `turnOnEvents` function such that your new event handler listens for the `"keydown"` event:
-
-```js
-$(document).on("keydown", handleKeyDown);
-```
-
-3. Save your code and refresh your game. Open the running application in a new window (see below)
+Save your code and refresh your game. Open the running application in a new window (see below)
 
 <img src='img/pop-into-window.png' height=400>
 
-4. Open the console, then press keys to make sure that the events are properly being registered.
+Open the console, then press keys to make sure that the events are properly being registered.
 
 <img src='img/keycode-console.png'>
 
@@ -137,10 +130,8 @@ var KEY = {
 2. Now, modify your `handleKeyDown` function such that it can react differently to our target keys. For example, if I wanted to print out `"enter pressed"` when the _Enter_ key is pressed, I could write:
 
 ```js
-function handleKeyDown() {
-  var keycode = event.which;
-  
-  if (keycode === KEY.ENTER) {
+function handleKeyDown() {  
+  if (event.which === KEY.ENTER) {
     console.log("enter pressed");
   }
 }
@@ -171,20 +162,25 @@ Declare 4 variables for the `gameItem` such that we can monitor and control the 
 
 **Initialize each variable to hold the value `0`**
 
-## TODO 4: Declare `moveGameItem` Function
+## TODO 4: Declare Some Helper Functions
 
 Now that we have our data tracking in place, we need to use that data to actually move the `gameItem` on each `update`. Again, this is a problem solved in Bouncing Box:
 
+To reposition the box we wrote:
+
 ```js
-function moveBox() {
-  positionX = positionX + speedX; // update the position of the box along the x-axis
-  $box.css("left", positionX);    // draw the box in the new location, positionX pixels away from the "left"
-}
+positionX += speedX; // update the position of the box along the x-axis
 ```
 
-1. In the HELPER FUNCTIONS section, declare a new function called `moveGameItem()`.
-2. Reference the above code to write the code for `moveGameItem` to make the `gameItem` move along the x-axis AND the y-axis. 
-2. Call the function on each `update`.
+And to redraw the box in the new x-location we wrote:
+
+```js
+$box.css("left", positionX);    // draw the box in the new location, positionX pixels away from the "left"
+```
+
+1. In the HELPER FUNCTIONS section, declare two new functions called `repositionGameItem()` and `redrawGameItem()`.
+2. Reference the code above to complete these two functions such that they can reposition and redraw the GameItem to move along the x-axis AND the y-axis. 
+2. Call each function on each `newFrame`.
 
 **HINT:** Use the `"top"` CSS property to draw the box `y` pixels from the `"top"`
 

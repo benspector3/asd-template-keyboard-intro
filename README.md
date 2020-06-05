@@ -175,7 +175,7 @@ positionX += speedX; // update the position of the box along the x-axis
 And to redraw the box in the new x-location we wrote:
 
 ```js
-$box.css("left", positionX);    // draw the box in the new location, positionX pixels away from the "left"
+$("#box").css("left", positionX);    // draw the box in the new location, positionX pixels away from the "left"
 ```
 
 1. In the HELPER FUNCTIONS section, declare two new functions called `repositionGameItem()` and `redrawGameItem()`.

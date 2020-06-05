@@ -186,8 +186,6 @@ $("#box").css("left", positionX);    // draw the box in the new location, positi
 
 Save your code and refresh the game. If you try pressing keys you'll notice that the box isn't moving. 
 
-**Question: why doesn't the box move yet? Try using the debugger to figure out why.**
-
 ## TODO 5: Update `speedX` and `speedY` with the Keyboard
 
 The box isn't moving yet because we initialized `speedX` and `speedY` to `0` and, so far, have no way of changing those values.

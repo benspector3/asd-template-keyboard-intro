@@ -195,7 +195,7 @@ As long as `speedX` is `0`, the `gameItem` will not move along the x-axis. Same 
 Whenever we press a key, we want the `gameItem` to move in that direction. So, modify your `handleKeyDown` function such that when the `KEY.LEFT` key is pressed, the `speedX` is set to `-5`:
 
 ```js
-if (keycode === KEY.LEFT) {
+if (event.which === KEY.LEFT) {
   speedX = -5;
 }
 ```
